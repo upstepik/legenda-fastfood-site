@@ -73,6 +73,8 @@
         </div>
 
         <div class="hero__visual" aria-hidden="true">
+          <span class="heat-line heat-line--one"></span>
+          <span class="heat-line heat-line--two"></span>
           <img src="./assets/hero-shawarma.png" alt="" />
         </div>
       </section>
@@ -115,91 +117,8 @@
           <a class="text-link" href="#menu">Все позиции</a>
         </div>
 
-        <div class="product-grid product-grid--hits">
-          <article class="product-card" id="shawarma">
-            <div class="product-card__image">
-              <img src="./assets/wrap-classic.png" alt="Шаверма классическая" />
-            </div>
-            <div class="product-card__body">
-              <p class="product-card__tag">Сочная классика</p>
-              <h3>Шаверма классическая</h3>
-              <p>Курица, овощи, фирменный соус и горячий лаваш.</p>
-              <div class="product-card__footer">
-                <strong>159 ₴</strong>
-                <button class="add-button" type="button" data-name="Шаверма классическая" data-price="159">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__image">
-              <img src="./assets/wrap-long.png" alt="Шаверма метровая" />
-            </div>
-            <div class="product-card__body">
-              <p class="product-card__tag">Для большого голода</p>
-              <h3>Шаверма метровая</h3>
-              <p>Больше мяса, овощей и соуса в большом лаваше.</p>
-              <div class="product-card__footer">
-                <strong>329 ₴</strong>
-                <button class="add-button" type="button" data-name="Шаверма метровая" data-price="329">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" id="burgers">
-            <div class="product-card__image">
-              <img src="./assets/burger-legend.png" alt="Бургер Legend" />
-            </div>
-            <div class="product-card__body">
-              <p class="product-card__tag">Бургер дня</p>
-              <h3>Бургер Legend</h3>
-              <p>Говяжья котлета, сыр, овощи и фирменный соус.</p>
-              <div class="product-card__footer">
-                <strong>189 ₴</strong>
-                <button class="add-button" type="button" data-name="Бургер Legend" data-price="189">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card" id="burums">
-            <div class="product-card__image">
-              <img src="./assets/burum-spicy.png" alt="Бурум острый" />
-            </div>
-            <div class="product-card__body">
-              <p class="product-card__tag">Острый выбор</p>
-              <h3>Бурум острый</h3>
-              <p>Острое мясо, свежие овощи и соус чили.</p>
-              <div class="product-card__footer">
-                <strong>169 ₴</strong>
-                <button class="add-button" type="button" data-name="Бурум острый" data-price="169">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card product-card--wide">
-            <div class="product-card__image">
-              <img src="./assets/combo-xl.png" alt="Комбо XL" />
-            </div>
-            <div class="product-card__body">
-              <p class="product-card__tag">Выгодно</p>
-              <h3>Комбо XL</h3>
-              <p>Бургер, картофель фри и напиток на выбор.</p>
-              <div class="product-card__footer">
-                <strong>249 ₴</strong>
-                <button class="add-button" type="button" data-name="Комбо XL" data-price="249">
-                  Добавить
-                </button>
-              </div>
-            </div>
-          </article>
+        <div class="product-grid product-grid--hits" data-hits-grid aria-live="polite">
+          <p class="menu-loading">Загружаем хиты...</p>
         </div>
       </section>
 
@@ -209,95 +128,29 @@
             <p class="eyebrow">Полное меню</p>
             <h2 id="menu-title">Шаверма, бургеры, снеки и напитки</h2>
           </div>
-          <div class="menu-tabs" aria-label="Разделы меню">
-            <a href="#shawarma">Шаверма</a>
-            <a href="#burgers">Бургеры</a>
-            <a href="#combo">Комбо</a>
-            <a href="#drinks">Напитки</a>
+          <div class="menu-tabs" aria-label="Разделы меню" data-menu-tabs>
+            <button class="is-active" type="button" data-category="all">Все</button>
+            <button type="button" data-category="shawarma">Шаверма</button>
+            <button type="button" data-category="burgers">Бургеры</button>
+            <button type="button" data-category="burums">Бурумы</button>
+            <button type="button" data-category="combo">Комбо</button>
+            <button type="button" data-category="snacks">Снеки</button>
+            <button type="button" data-category="drinks">Напитки</button>
           </div>
         </div>
 
         <div class="menu-layout">
-          <div class="menu-list">
-            <article class="menu-item">
-              <img src="./assets/wrap-classic.png" alt="Шаурма острая" />
-              <div>
-                <h3>Шаурма острая</h3>
-                <p>Курица, овощи, чили и фирменный соус.</p>
-                <strong>169 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Шаурма острая" data-price="169" aria-label="Добавить Шаурма острая">
-                +
-              </button>
-            </article>
-
-            <article class="menu-item">
-              <img src="./assets/burger-xl.png" alt="Бургер XL" />
-              <div>
-                <h3>Бургер XL</h3>
-                <p>Двойная котлета, сыр, овощи и соус.</p>
-                <strong>249 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Бургер XL" data-price="249" aria-label="Добавить Бургер XL">
-                +
-              </button>
-            </article>
-
-            <article class="menu-item" id="combo">
-              <img src="./assets/combo-xl.png" alt="Комбо Legend" />
-              <div>
-                <h3>Комбо Legend</h3>
-                <p>Бургер, фри и напиток. Быстро и сытно.</p>
-                <strong>249 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Комбо Legend" data-price="249" aria-label="Добавить Комбо Legend">
-                +
-              </button>
-            </article>
-
-            <article class="menu-item">
-              <img src="./assets/fries.png" alt="Картофель фри" />
-              <div>
-                <h3>Картофель фри</h3>
-                <p>Хрустящий, горячий, с солью.</p>
-                <strong>79 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Картофель фри" data-price="79" aria-label="Добавить Картофель фри">
-                +
-              </button>
-            </article>
-
-            <article class="menu-item">
-              <img src="./assets/nuggets.png" alt="Наггетсы" />
-              <div>
-                <h3>Наггетсы</h3>
-                <p>Золотистые кусочки и соус на выбор.</p>
-                <strong>119 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Наггетсы" data-price="119" aria-label="Добавить Наггетсы">
-                +
-              </button>
-            </article>
-
-            <article class="menu-item" id="drinks">
-              <img src="./assets/cola-can.png" alt="Кола" />
-              <div>
-                <h3>Кола</h3>
-                <p>Холодный напиток к горячему заказу.</p>
-                <strong>55 ₴</strong>
-              </div>
-              <button class="icon-add" type="button" data-name="Кола" data-price="55" aria-label="Добавить Кола">
-                +
-              </button>
-            </article>
+          <div class="menu-list" data-menu-list aria-live="polite">
+            <p class="menu-loading">Собираем меню...</p>
           </div>
 
           <aside class="order-panel" id="order" aria-labelledby="order-title">
             <p class="eyebrow">Корзина</p>
             <h2 id="order-title">Ваш заказ</h2>
             <p data-empty-cart>Добавьте пару позиций, и здесь появится сумма.</p>
+            <div class="order-panel__items" data-order-items></div>
             <div class="order-panel__summary" hidden data-order-summary>
-              <strong><span data-cart-count-panel>0</span> товара</strong>
+              <strong><span data-cart-count-panel>0</span> <span data-cart-word-panel>товара</span></strong>
               <span data-cart-total-panel>0 ₴</span>
             </div>
             <a class="button button--primary button--full" href="tel:+380991234567">Оформить</a>
@@ -313,7 +166,7 @@
             Собери комбо на каждый голод: горячее основное, хрустящая картошка и холодный напиток.
           </p>
           <div class="promo__actions">
-            <button class="button button--light add-button" type="button" data-name="Комбо дня" data-price="229">
+            <button class="button button--light add-button" type="button" data-sku="combo-day">
               Заказать комбо
             </button>
             <a class="button button--outline-light" href="#menu">Смотреть все акции</a>
@@ -400,7 +253,7 @@
 
     <div class="sticky-cart" data-sticky-cart hidden>
       <div>
-        <strong><span data-cart-count-sticky>0</span> товара</strong>
+        <strong><span data-cart-count-sticky>0</span> <span data-cart-word-sticky>товара</span></strong>
         <span data-cart-total-sticky>0 ₴</span>
       </div>
       <a href="tel:+380991234567">Оформить</a>

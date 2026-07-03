@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobile preview - Легенда</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        background: #161412;
+        color: #fff;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      }
+
+      .stage {
+        display: grid;
+        gap: 16px;
+        justify-items: center;
+        padding: 22px;
+      }
+
+      .phone {
+        width: 414px;
+        height: 896px;
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 46px;
+        background: #050505;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+      }
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 34px;
+        background: #fffaf3;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .caption {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 14px;
+      }
+
+      @media (max-height: 950px) {
+        .phone {
+          width: 390px;
+          height: 844px;
+        }
+      }
+
+      @media (max-width: 460px) {
+        .stage {
+          padding: 0;
+        }
+
+        .phone {
+          width: 100vw;
+          height: 100vh;
+          padding: 0;
+          border: 0;
+          border-radius: 0;
+        }
+
+        .screen {
+          border-radius: 0;
+        }
+
+        .caption {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <div class="phone" aria-label="Mobile preview">
+        <div class="screen">
+          <iframe src="https://legenda-fastfood-site.onrender.com" title="Легенда mobile preview"></iframe>
+        </div>
+      </div>
+      <div class="caption">Live Render site inside a 390-414px mobile viewport</div>
+    </main>
+  </body>
+</html>
