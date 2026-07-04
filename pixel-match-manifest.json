@@ -1,0 +1,53 @@
+{
+  "policy": "WITHOUT_TEXT/background files are immutable and must be copied byte-for-byte.",
+  "items": [
+    {
+      "path": "assets/pixel-match/hero-desktop-bg.png",
+      "file": "hero-desktop-bg.png",
+      "semantic_key": "hero_desktop",
+      "role": "background",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "973e26979c0fde9fe042b0c6489d15baa1af789a1b1f32f63101f90b3d925a59"
+    },
+    {
+      "path": "assets/pixel-match/hero-mobile-bg.png",
+      "file": "hero-mobile-bg.png",
+      "semantic_key": "hero_mobile",
+      "role": "background",
+      "width": 941,
+      "height": 1672,
+      "sha256": "a37693e74a9fb329d13e836cae32491091a106b46a9db9124416cf40b3858690"
+    },
+    {
+      "path": "assets/pixel-match/reference-desktop-with-text.png",
+      "file": "reference-desktop-with-text.png",
+      "semantic_key": "hero_desktop",
+      "role": "reference",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "548ec2280e4fc9811a1b9e5dd4ad5a663240c1b6f8830699d8b4409d35b648ec"
+    },
+    {
+      "path": "assets/pixel-match/reference-mobile-with-text.png",
+      "file": "reference-mobile-with-text.png",
+      "semantic_key": "hero_mobile",
+      "role": "reference",
+      "width": 941,
+      "height": 1672,
+      "sha256": "b516fb5c997475f19084277941ae939c1704e5264566b2a2059cba3805be0414"
+    }
+  ],
+  "groups": {
+    "hero_desktop": {
+      "backgrounds": ["hero-desktop-bg.png"],
+      "references": ["reference-desktop-with-text.png"],
+      "unknown": []
+    },
+    "hero_mobile": {
+      "backgrounds": ["hero-mobile-bg.png"],
+      "references": ["reference-mobile-with-text.png"],
+      "unknown": []
+    }
+  }
+}

@@ -15,70 +15,73 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Легенда, на главную">
-        <span class="brand__mark">Л</span>
-        <span>
-          <strong>Легенда</strong>
-          <small>шаверма • бургеры • комбо</small>
-        </span>
-      </a>
-
-      <nav class="desktop-nav" aria-label="Основная навигация">
-        <a href="#top">Главная</a>
-        <a href="#menu">Меню</a>
-        <a href="#combo">Комбо</a>
-        <a href="#about">О нас</a>
-        <a href="#delivery">Доставка</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="cart-chip" type="button" data-cart-open aria-label="Открыть корзину">
-          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-            <path d="M6.5 8.5h11l-1.1 8.2a2 2 0 0 1-2 1.8H9.6a2 2 0 0 1-2-1.8L6.5 8.5Z" />
-            <path d="M9 8.5a3 3 0 0 1 6 0" />
-          </svg>
-          <span class="cart-chip__count" data-cart-count>0</span>
-        </button>
-        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      <nav class="mobile-nav" aria-label="Мобильная навигация" data-mobile-nav>
-        <a href="#top">Главная</a>
-        <a href="#menu">Меню</a>
-        <a href="#combo">Комбо</a>
-        <a href="#delivery">Доставка</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-    </header>
-
     <main id="top">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero__content">
-          <p class="eyebrow">Горячо. Сочно. По легенде.</p>
-          <h1 id="hero-title">Шаверма, бургеры и бурумы без лишних слов.</h1>
-          <p class="hero__lead">
-            Быстрая доставка, сочное мясо и свежие ингредиенты. Еда, к которой хочется вернуться.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#menu">Заказать сейчас</a>
-            <a class="button button--ghost" href="#hits">Смотреть меню</a>
+      <section class="pixel-hero" aria-labelledby="hero-title">
+        <div class="pixel-hero__artboard pixel-hero__artboard--desktop" data-pixel-artboard="desktop">
+          <img class="pixel-hero__bg" src="./assets/pixel-match/hero-desktop-bg.png" alt="" />
+          <div class="pixel-hero__layer">
+            <a class="pm-text pm-logo pm-logo--desktop" href="#top" aria-label="Легенда, на главную">ЛЕГЕНДА</a>
+
+            <nav class="pm-nav" aria-label="Основная навигация">
+              <a class="pm-text" style="--x: 350; --y: 72; --fs: 16;" href="#menu">Меню</a>
+              <a class="pm-text" style="--x: 435; --y: 72; --fs: 16;" href="#combo">Комбо</a>
+              <a class="pm-text" style="--x: 520; --y: 72; --fs: 16;" href="#hits">Акции</a>
+              <a class="pm-text" style="--x: 610; --y: 72; --fs: 16;" href="#delivery">Доставка и оплата</a>
+              <a class="pm-text" style="--x: 780; --y: 72; --fs: 16;" href="#about">О нас</a>
+              <a class="pm-text" style="--x: 865; --y: 72; --fs: 16;" href="#benefits">Отзывы</a>
+              <a class="pm-text" style="--x: 965; --y: 72; --fs: 16;" href="#contacts">Контакты</a>
+            </nav>
+
+            <a class="pm-text pm-phone" style="--x: 1195; --y: 69; --fs: 18;" href="tel:88005555555">8 (800) 555-55-55</a>
+            <p class="pm-text pm-badge" style="--x: 118; --y: 225; --fs: 14;">БЫСТРО&nbsp;&nbsp;•&nbsp;&nbsp;ВКУСНО&nbsp;&nbsp;•&nbsp;&nbsp;СЫТНО</p>
+            <h1 class="pm-text pm-title" id="hero-title" style="--x: 68; --y: 286; --w: 720; --fs: 76;">ШАУРМА, БУРГЕРЫ<br />И БУРУМЫ</h1>
+            <p class="pm-text pm-title-accent" style="--x: 68; --y: 515; --fs: 42;">С ДОСТАВКОЙ</p>
+            <p class="pm-text pm-lead" style="--x: 70; --y: 580; --w: 510; --fs: 20;">
+              Готовим из свежих ингредиентов каждый день. Сочная шаурма, аппетитные бургеры и хрустящие бурумы — легендарный вкус, который хочется ещё.
+            </p>
+            <a class="pm-text pm-button-label pm-button-label--primary" style="--x: 160; --y: 711; --fs: 18;" href="#menu">Заказать доставку</a>
+            <a class="pm-text pm-button-label pm-button-label--secondary" style="--x: 468; --y: 711; --fs: 18;" href="#menu">Смотреть меню</a>
+            <p class="pm-text pm-benefit-title" style="--x: 164; --y: 840; --fs: 19;">Быстрая<br />доставка</p>
+            <p class="pm-text pm-benefit-sub" style="--x: 164; --y: 890; --fs: 14;">от 25 минут</p>
+            <p class="pm-text pm-benefit-title" style="--x: 393; --y: 840; --fs: 19;">Свежие<br />продукты</p>
+            <p class="pm-text pm-benefit-sub" style="--x: 393; --y: 890; --fs: 14;">каждый день</p>
+            <p class="pm-text pm-benefit-title" style="--x: 622; --y: 840; --fs: 19;">Большие<br />порции</p>
+            <p class="pm-text pm-benefit-sub" style="--x: 622; --y: 890; --fs: 14;">всегда сытно</p>
+
+            <a class="pm-hit pm-hit--desktop-phone" href="tel:88005555555" aria-label="Позвонить"></a>
+            <button class="pm-hit pm-hit--desktop-cart" type="button" data-cart-open aria-label="Открыть корзину"></button>
+            <span class="pm-cart-count pm-cart-count--desktop" data-cart-count>0</span>
+            <a class="pm-hit pm-hit--desktop-primary" href="#menu" aria-label="Заказать доставку"></a>
+            <a class="pm-hit pm-hit--desktop-secondary" href="#menu" aria-label="Смотреть меню"></a>
           </div>
-          <ul class="hero__facts" aria-label="Преимущества">
-            <li>Доставка от 30 мин</li>
-            <li>Свежие продукты</li>
-            <li>Большие порции</li>
-          </ul>
         </div>
 
-        <div class="hero__visual" aria-hidden="true">
-          <span class="heat-line heat-line--one"></span>
-          <span class="heat-line heat-line--two"></span>
-          <img src="./assets/hero-shawarma.png" alt="" />
+        <div class="pixel-hero__artboard pixel-hero__artboard--mobile" data-pixel-artboard="mobile">
+          <img class="pixel-hero__bg" src="./assets/pixel-match/hero-mobile-bg.png" alt="" />
+          <div class="pixel-hero__layer">
+            <a class="pm-text pm-logo pm-logo--mobile" href="#top" aria-label="Легенда, на главную">Легенда</a>
+            <p class="pm-text pm-badge pm-badge--mobile" style="--x: 122; --y: 238; --fs: 22;">БЫСТРО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ВКУСНО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;СЫТНО</p>
+            <h2 class="pm-text pm-title pm-title--mobile" style="--x: 43; --y: 305; --w: 560; --fs: 71;">ШАУРМА,<br />БУРГЕРЫ<br />И БУРУМЫ</h2>
+            <p class="pm-text pm-title-accent pm-title-accent--mobile" style="--x: 43; --y: 638; --fs: 48;">С ДОСТАВКОЙ</p>
+            <p class="pm-text pm-lead pm-lead--mobile" style="--x: 43; --y: 718; --w: 430; --fs: 26;">
+              Готовим из свежих ингредиентов каждый день. Сочная шаурма, аппетитные бургеры и хрустящие бурумы — легендарный вкус, который хочется ещё.
+            </p>
+            <a class="pm-text pm-button-label pm-button-label--primary pm-button-label--mobile-primary" style="--x: 146; --y: 944; --fs: 26;" href="#menu">Заказать доставку</a>
+            <a class="pm-text pm-button-label pm-button-label--secondary pm-button-label--mobile-secondary" style="--x: 148; --y: 1050; --fs: 25;" href="#menu">Смотреть меню</a>
+            <p class="pm-text pm-benefit-title pm-benefit-title--mobile" style="--x: 164; --y: 1515; --fs: 25;">Быстрая<br />доставка</p>
+            <p class="pm-text pm-benefit-sub pm-benefit-sub--mobile" style="--x: 164; --y: 1568; --fs: 20;">от 25 минут</p>
+            <p class="pm-text pm-benefit-title pm-benefit-title--mobile" style="--x: 442; --y: 1515; --fs: 25;">Свежие<br />продукты</p>
+            <p class="pm-text pm-benefit-sub pm-benefit-sub--mobile" style="--x: 442; --y: 1568; --fs: 20;">каждый день</p>
+            <p class="pm-text pm-benefit-title pm-benefit-title--mobile" style="--x: 722; --y: 1515; --fs: 25;">Большие<br />порции</p>
+            <p class="pm-text pm-benefit-sub pm-benefit-sub--mobile" style="--x: 722; --y: 1568; --fs: 20;">всегда сытно</p>
+
+            <a class="pm-hit pm-hit--mobile-phone" href="tel:88005555555" aria-label="Позвонить"></a>
+            <button class="pm-hit pm-hit--mobile-cart" type="button" data-cart-open aria-label="Открыть корзину"></button>
+            <span class="pm-cart-count pm-cart-count--mobile" data-cart-count>0</span>
+            <a class="pm-hit pm-hit--mobile-menu" href="#menu" aria-label="Открыть меню"></a>
+            <a class="pm-hit pm-hit--mobile-primary" href="#menu" aria-label="Заказать доставку"></a>
+            <a class="pm-hit pm-hit--mobile-secondary" href="#menu" aria-label="Смотреть меню"></a>
+          </div>
         </div>
       </section>
 
@@ -168,7 +171,7 @@
         </div>
       </section>
 
-      <section class="section-shell benefits" aria-labelledby="benefits-title">
+      <section class="section-shell benefits" id="benefits" aria-labelledby="benefits-title">
         <div class="section-heading">
           <p class="eyebrow">Почему нас выбирают</p>
           <h2 id="benefits-title">Без пафоса. Просто вкусно и быстро.</h2>

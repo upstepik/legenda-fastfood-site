@@ -339,7 +339,7 @@ const mobileNav = document.querySelector("[data-mobile-nav]");
 const hitsGrid = document.querySelector("[data-hits-grid]");
 const menuList = document.querySelector("[data-menu-list]");
 const menuTabs = document.querySelector("[data-menu-tabs]");
-const cartOpenButton = document.querySelector("[data-cart-open]");
+const cartOpenButtons = document.querySelectorAll("[data-cart-open]");
 const cartDrawer = document.querySelector("[data-cart-drawer]");
 const cartBackdrop = document.querySelector("[data-cart-backdrop]");
 const cartCloseButtons = document.querySelectorAll("[data-cart-close]");
@@ -352,6 +352,16 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 let activeCategory = "all";
 let revealObserver;
+
+function activeCartOpenButton() {
+  return (
+    [...cartOpenButtons].find((button) => {
+      const box = button.getBoundingClientRect();
+      const style = window.getComputedStyle(button);
+      return box.width > 0 && box.height > 0 && style.visibility !== "hidden" && style.display !== "none";
+    }) || cartOpenButtons[0]
+  );
+}
 
 function formatPrice(value) {
   return `${value.toLocaleString("ru-RU")} ₴`;
@@ -493,7 +503,7 @@ function closeCart() {
   cartDrawer.setAttribute("aria-hidden", "true");
   cartDrawer.setAttribute("inert", "");
   document.body.classList.remove("cart-open");
-  cartOpenButton?.focus({ preventScroll: true });
+  activeCartOpenButton()?.focus({ preventScroll: true });
 
   window.setTimeout(() => {
     if (!cartDrawer.classList.contains("is-open")) {
@@ -503,6 +513,7 @@ function closeCart() {
 }
 
 function animateCartAdd(trigger) {
+  const cartOpenButton = activeCartOpenButton();
   if (prefersReducedMotion || !trigger || !cartOpenButton) return;
 
   const from = trigger.getBoundingClientRect();
@@ -642,7 +653,7 @@ mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMobileNav);
 });
 
-cartOpenButton?.addEventListener("click", openCart);
+cartOpenButtons.forEach((button) => button.addEventListener("click", openCart));
 cartBackdrop?.addEventListener("click", closeCart);
 cartCloseButtons.forEach((button) => button.addEventListener("click", closeCart));
 
