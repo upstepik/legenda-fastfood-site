@@ -34,10 +34,13 @@
       </nav>
 
       <div class="header-actions">
-        <a class="cart-chip" href="#order" aria-label="Открыть заказ">
+        <button class="cart-chip" type="button" data-cart-open aria-label="Открыть корзину">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <path d="M6.5 8.5h11l-1.1 8.2a2 2 0 0 1-2 1.8H9.6a2 2 0 0 1-2-1.8L6.5 8.5Z" />
+            <path d="M9 8.5a3 3 0 0 1 6 0" />
+          </svg>
           <span class="cart-chip__count" data-cart-count>0</span>
-          <span>Мой заказ</span>
-        </a>
+        </button>
         <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
           <span></span>
           <span></span>
@@ -143,18 +146,6 @@
           <div class="menu-list" data-menu-list aria-live="polite">
             <p class="menu-loading">Собираем меню...</p>
           </div>
-
-          <aside class="order-panel" id="order" aria-labelledby="order-title">
-            <p class="eyebrow">Корзина</p>
-            <h2 id="order-title">Ваш заказ</h2>
-            <p data-empty-cart>Добавьте пару позиций, и здесь появится сумма.</p>
-            <div class="order-panel__items" data-order-items></div>
-            <div class="order-panel__summary" hidden data-order-summary>
-              <strong><span data-cart-count-panel>0</span> <span data-cart-word-panel>товара</span></strong>
-              <span data-cart-total-panel>0 ₴</span>
-            </div>
-            <a class="button button--primary button--full" href="tel:+380991234567">Оформить</a>
-          </aside>
         </div>
       </section>
 
@@ -173,7 +164,7 @@
           </div>
         </div>
         <div class="promo__image" aria-hidden="true">
-          <img src="./assets/hero-combo.png" alt="" />
+          <img src="./assets/promo-shawarma-combo.png" alt="" />
         </div>
       </section>
 
@@ -251,12 +242,27 @@
       </section>
     </main>
 
-    <div class="sticky-cart" data-sticky-cart hidden>
-      <div>
-        <strong><span data-cart-count-sticky>0</span> <span data-cart-word-sticky>товара</span></strong>
-        <span data-cart-total-sticky>0 ₴</span>
+    <div class="cart-backdrop" data-cart-backdrop hidden></div>
+    <aside class="cart-drawer" data-cart-drawer aria-labelledby="cart-title" aria-hidden="true" inert>
+      <div class="cart-drawer__head">
+        <div>
+          <p class="eyebrow">Корзина</p>
+          <h2 id="cart-title">Ваш заказ</h2>
+        </div>
+        <button class="cart-drawer__close" type="button" data-cart-close aria-label="Закрыть корзину">
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <a href="tel:+380991234567">Оформить</a>
+
+      <p class="cart-drawer__empty" data-empty-cart>Добавьте позиции, и здесь появится сумма.</p>
+      <div class="order-panel__items" data-order-items></div>
+      <div class="order-panel__summary" hidden data-order-summary>
+        <strong><span data-cart-count-panel>0</span> <span data-cart-word-panel>товара</span></strong>
+        <span data-cart-total-panel>0 ₴</span>
+      </div>
+      <button class="button button--primary button--full" type="button" data-checkout>Оформить</button>
+      <p class="cart-drawer__note" data-checkout-note hidden>Заказ собран в корзине. Подключение оплаты или Telegram-формы можно добавить следующим шагом.</p>
     </div>
 
     <script src="./script.js"></script>

@@ -339,7 +339,12 @@ const mobileNav = document.querySelector("[data-mobile-nav]");
 const hitsGrid = document.querySelector("[data-hits-grid]");
 const menuList = document.querySelector("[data-menu-list]");
 const menuTabs = document.querySelector("[data-menu-tabs]");
-const stickyCart = document.querySelector("[data-sticky-cart]");
+const cartOpenButton = document.querySelector("[data-cart-open]");
+const cartDrawer = document.querySelector("[data-cart-drawer]");
+const cartBackdrop = document.querySelector("[data-cart-backdrop]");
+const cartCloseButtons = document.querySelectorAll("[data-cart-close]");
+const checkoutButton = document.querySelector("[data-checkout]");
+const checkoutNote = document.querySelector("[data-checkout-note]");
 const emptyCart = document.querySelector("[data-empty-cart]");
 const orderSummary = document.querySelector("[data-order-summary]");
 const orderItems = document.querySelector("[data-order-items]");
@@ -440,25 +445,22 @@ function renderCart() {
 
   setText("[data-cart-count]", cartCount);
   setText("[data-cart-count-panel]", cartCount);
-  setText("[data-cart-count-sticky]", cartCount);
   setText("[data-cart-word-panel]", pluralItems(cartCount));
-  setText("[data-cart-word-sticky]", pluralItems(cartCount));
   setText("[data-cart-total-panel]", formatPrice(cartTotal));
-  setText("[data-cart-total-sticky]", formatPrice(cartTotal));
 
   if (items.length) {
-    stickyCart.hidden = false;
     emptyCart.hidden = true;
     orderSummary.hidden = false;
+    checkoutButton.disabled = false;
   } else {
-    stickyCart.hidden = true;
     emptyCart.hidden = false;
     orderSummary.hidden = true;
+    checkoutButton.disabled = true;
+    checkoutNote.hidden = true;
   }
 
   if (orderItems) {
     orderItems.innerHTML = items
-      .slice(0, 5)
       .map(
         ({ product, qty, sum }) => `
           <div class="order-item">
@@ -470,8 +472,61 @@ function renderCart() {
       )
       .join("");
   }
+}
 
-  stickyCart?.classList.toggle("is-live", items.length > 0);
+function openCart() {
+  cartBackdrop.hidden = false;
+  cartDrawer.setAttribute("aria-hidden", "false");
+  cartDrawer.removeAttribute("inert");
+  document.body.classList.add("cart-open");
+
+  window.requestAnimationFrame(() => {
+    cartBackdrop.classList.add("is-open");
+    cartDrawer.classList.add("is-open");
+    cartDrawer.querySelector("[data-cart-close]")?.focus({ preventScroll: true });
+  });
+}
+
+function closeCart() {
+  cartBackdrop.classList.remove("is-open");
+  cartDrawer.classList.remove("is-open");
+  cartDrawer.setAttribute("aria-hidden", "true");
+  cartDrawer.setAttribute("inert", "");
+  document.body.classList.remove("cart-open");
+  cartOpenButton?.focus({ preventScroll: true });
+
+  window.setTimeout(() => {
+    if (!cartDrawer.classList.contains("is-open")) {
+      cartBackdrop.hidden = true;
+    }
+  }, 220);
+}
+
+function animateCartAdd(trigger) {
+  if (prefersReducedMotion || !trigger || !cartOpenButton) return;
+
+  const from = trigger.getBoundingClientRect();
+  const to = cartOpenButton.getBoundingClientRect();
+  const token = document.createElement("span");
+  token.className = "fly-token";
+  token.style.left = `${from.left + from.width / 2 - 7}px`;
+  token.style.top = `${from.top + from.height / 2 - 7}px`;
+  document.body.append(token);
+
+  const deltaX = to.left + to.width / 2 - (from.left + from.width / 2);
+  const deltaY = to.top + to.height / 2 - (from.top + from.height / 2);
+  token.animate(
+    [
+      { opacity: 0.95, transform: "translate3d(0, 0, 0) scale(1)" },
+      { opacity: 0.9, offset: 0.55, transform: `translate3d(${deltaX * 0.62}px, ${deltaY - 34}px, 0) scale(0.92)` },
+      { opacity: 0, transform: `translate3d(${deltaX}px, ${deltaY}px, 0) scale(0.35)` },
+    ],
+    { duration: 520, easing: "cubic-bezier(0.23, 1, 0.32, 1)" },
+  ).addEventListener("finish", () => token.remove());
+
+  cartOpenButton.classList.remove("is-bump");
+  window.requestAnimationFrame(() => cartOpenButton.classList.add("is-bump"));
+  window.setTimeout(() => cartOpenButton.classList.remove("is-bump"), 260);
 }
 
 function addToCart(sku, trigger) {
@@ -479,8 +534,10 @@ function addToCart(sku, trigger) {
   if (!product) return;
 
   cart.set(sku, (cart.get(sku) || 0) + 1);
+  checkoutNote.hidden = true;
   renderCart();
   syncMenuQuantities();
+  animateCartAdd(trigger);
 
   const card = trigger?.closest("[data-sku-card]");
   card?.classList.add("is-added");
@@ -583,6 +640,20 @@ menuToggle?.addEventListener("click", () => {
 
 mobileNav?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeMobileNav);
+});
+
+cartOpenButton?.addEventListener("click", openCart);
+cartBackdrop?.addEventListener("click", closeCart);
+cartCloseButtons.forEach((button) => button.addEventListener("click", closeCart));
+
+checkoutButton?.addEventListener("click", () => {
+  checkoutNote.hidden = false;
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && cartDrawer?.classList.contains("is-open")) {
+    closeCart();
+  }
 });
 
 menuTabs?.addEventListener("click", (event) => {
