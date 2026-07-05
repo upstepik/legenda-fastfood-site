@@ -310,15 +310,19 @@ button {
 }
 
 .pm-mobile-button-icon--primary {
-  left: calc(86 / 941 * 100%);
-  top: calc(951 / 1672 * 100%);
+  left: calc(81 / 941 * 100%);
+  top: calc(940 / 1672 * 100%);
+  width: calc(55 / 941 * 100%);
+  height: calc(46 / 1672 * 100%);
   color: #fff;
   stroke: currentColor;
 }
 
 .pm-mobile-button-icon--secondary {
-  left: calc(106 / 941 * 100%);
-  top: calc(1052 / 1672 * 100%);
+  left: calc(95 / 941 * 100%);
+  top: calc(1044 / 1672 * 100%);
+  width: calc(52 / 941 * 100%);
+  height: calc(52 / 1672 * 100%);
   color: #17110d;
   stroke: currentColor;
 }
