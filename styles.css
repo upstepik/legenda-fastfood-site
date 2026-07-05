@@ -297,6 +297,32 @@ button {
   font-size: calc(18 / 941 * 100cqw);
 }
 
+.pm-mobile-button-icon {
+  position: absolute;
+  z-index: 3;
+  width: calc(42 / 941 * 100%);
+  height: calc(42 / 1672 * 100%);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  pointer-events: none;
+}
+
+.pm-mobile-button-icon--primary {
+  left: calc(86 / 941 * 100%);
+  top: calc(951 / 1672 * 100%);
+  color: #fff;
+  stroke: currentColor;
+}
+
+.pm-mobile-button-icon--secondary {
+  left: calc(106 / 941 * 100%);
+  top: calc(1052 / 1672 * 100%);
+  color: #17110d;
+  stroke: currentColor;
+}
+
 .pm-hit--mobile-phone {
   left: calc(560 / 941 * 100%);
   top: calc(41 / 1672 * 100%);
@@ -1445,10 +1471,12 @@ h3 {
   }
 
   .pm-title--mobile {
-    font-family: "Arial Black", Impact, "Russo One", Manrope, sans-serif;
+    font-family: Impact, "Arial Black", "Russo One", Manrope, sans-serif;
     font-weight: 900;
     letter-spacing: calc(-1.2 / 941 * 100cqw);
-    line-height: 0.94;
+    line-height: 0.95;
+    transform: scaleX(0.92);
+    transform-origin: left top;
   }
 
   .pm-badge--mobile {
@@ -1461,6 +1489,8 @@ h3 {
   .pm-title-accent--mobile {
     font-weight: 900;
     letter-spacing: calc(1 / 941 * 100cqw);
+    transform: scaleX(1.2);
+    transform-origin: left top;
   }
 
   .pm-lead--mobile {
