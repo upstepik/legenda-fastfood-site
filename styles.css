@@ -154,10 +154,12 @@ button {
 }
 
 .pm-logo--mobile {
-  --x: 52;
+  --x: 66;
   --y: 73;
   --fs: 42;
+  font-weight: 800;
   letter-spacing: -0.055em;
+  line-height: 1;
 }
 
 .pm-nav .pm-text,
@@ -1443,20 +1445,33 @@ h3 {
   }
 
   .pm-title--mobile {
-    line-height: 0.985;
+    font-family: "Arial Black", Impact, "Russo One", Manrope, sans-serif;
+    font-weight: 900;
+    letter-spacing: calc(-1.2 / 941 * 100cqw);
+    line-height: 0.94;
+  }
+
+  .pm-badge--mobile {
+    color: #17110d;
+    font-weight: 800;
+    letter-spacing: calc(0.4 / 941 * 100cqw);
+    text-transform: uppercase;
   }
 
   .pm-title-accent--mobile {
-    letter-spacing: 0.035em;
+    font-weight: 900;
+    letter-spacing: calc(1 / 941 * 100cqw);
   }
 
   .pm-lead--mobile {
+    font-weight: 400;
     line-height: 1.35;
   }
 
   .pm-button-label--mobile-primary,
   .pm-button-label--mobile-secondary {
-    font-weight: 900;
+    font-weight: 800;
+    line-height: 1;
   }
 
   .pm-benefit-title--mobile {
