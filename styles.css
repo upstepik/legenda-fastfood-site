@@ -1075,24 +1075,40 @@ h3 {
 .promo {
   position: relative;
   display: grid;
-  min-height: 390px;
-  padding: 24px;
-  gap: 16px;
+  min-height: 430px;
+  padding: 22px;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
   border-radius: 34px;
   background:
-    linear-gradient(135deg, rgba(255, 90, 0, 0.98), rgba(255, 51, 0, 0.95)),
-    var(--orange);
-  box-shadow: 0 28px 60px rgba(255, 90, 0, 0.22);
-  color: #fff;
+    radial-gradient(circle at 78% 36%, rgba(255, 90, 0, 0.13), transparent 31%),
+    linear-gradient(135deg, #fffefd 0%, #fff7ee 100%);
+  box-shadow: 0 26px 58px rgba(80, 49, 27, 0.11);
+  color: var(--text);
   overflow: hidden;
 }
 
 .promo::after {
-  display: none;
+  position: absolute;
+  right: -70px;
+  bottom: -92px;
+  width: 250px;
+  height: 250px;
+  border-radius: 999px;
+  background: #ff5a00;
+  opacity: 0.08;
+  content: "";
 }
 
 .promo::before {
-  display: none;
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  width: 88px;
+  height: 10px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, rgba(255, 90, 0, 0.24) 0 10px, transparent 10px 18px);
+  content: "";
 }
 
 .promo__content {
@@ -1101,31 +1117,59 @@ h3 {
   display: grid;
   align-content: start;
   justify-items: start;
-  gap: 13px;
+  gap: 14px;
 }
 
 .promo h2 {
-  max-width: 8.6em;
-  color: #fff;
+  max-width: 10.8em;
+  color: var(--text);
 }
 
 .promo p:not(.eyebrow) {
-  max-width: 33rem;
+  max-width: 32rem;
   margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.5;
 }
 
+.promo__deal {
+  display: grid;
+  gap: 2px;
+  min-width: 178px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 90, 0, 0.16);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(80, 49, 27, 0.08);
+}
+
+.promo__deal strong {
+  color: var(--orange-dark);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.promo__deal span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .promo__image {
+  position: relative;
+  z-index: 1;
   align-self: end;
   margin: 0;
+  pointer-events: none;
 }
 
 .promo__image img {
-  width: min(100%, 520px);
+  width: min(112%, 580px);
   margin-left: auto;
-  filter: drop-shadow(0 22px 32px rgba(111, 30, 0, 0.22));
+  transform: translate(18px, 10px);
+  filter: drop-shadow(0 24px 34px rgba(80, 38, 13, 0.18));
 }
 
 .benefit-grid {

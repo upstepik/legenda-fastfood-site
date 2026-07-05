@@ -6,7 +6,7 @@ const catalog = [
     badge: "Сочная классика",
     description: "Курица, овощи, фирменный соус и горячий лаваш.",
     price: 159,
-    image: "./assets/wrap-classic.png",
+    image: "./assets/products/shawarma-classic.png",
     popular: true,
   },
   {
@@ -16,7 +16,7 @@ const catalog = [
     badge: "Чили соус",
     description: "Курица, овощи, перец и соус с нормальной остротой.",
     price: 169,
-    image: "./assets/wrap-classic.png",
+    image: "./assets/products/shawarma-spicy.png",
     popular: false,
   },
   {
@@ -26,7 +26,7 @@ const catalog = [
     badge: "Мягкий сыр",
     description: "Курица, овощи, сырный соус и тянущийся сыр.",
     price: 189,
-    image: "./assets/wrap-classic.png",
+    image: "./assets/products/shawarma-cheese.png",
     popular: true,
   },
   {
@@ -36,7 +36,7 @@ const catalog = [
     badge: "Больше мяса",
     description: "Плотная порция курицы, овощи и два соуса.",
     price: 219,
-    image: "./assets/wrap-classic.png",
+    image: "./assets/products/shawarma-double.png",
     popular: false,
   },
   {
@@ -46,7 +46,7 @@ const catalog = [
     badge: "Для компании",
     description: "Большой лаваш, много мяса, овощей и соуса.",
     price: 329,
-    image: "./assets/wrap-long.png",
+    image: "./assets/products/shawarma-meter.png",
     popular: true,
   },
   {
@@ -56,7 +56,7 @@ const catalog = [
     badge: "Быстрый перекус",
     description: "Компактная порция, когда хочется быстро и горячо.",
     price: 119,
-    image: "./assets/burum-spicy.png",
+    image: "./assets/products/shawarma-mini.png",
     popular: false,
   },
   {
@@ -66,7 +66,7 @@ const catalog = [
     badge: "Бургер дня",
     description: "Говяжья котлета, сыр, овощи и фирменный соус.",
     price: 189,
-    image: "./assets/burger-legend.png",
+    image: "./assets/products/burger-legend.png",
     popular: true,
   },
   {
@@ -76,7 +76,7 @@ const catalog = [
     badge: "Двойная котлета",
     description: "Две котлеты, сыр, овощи и соус в мягкой булке.",
     price: 249,
-    image: "./assets/burger-xl.png",
+    image: "./assets/products/burger-xl.png",
     popular: false,
   },
   {
@@ -86,7 +86,7 @@ const catalog = [
     badge: "Сырный",
     description: "Котлета, сыр, огурцы, лук и легкий соус.",
     price: 159,
-    image: "./assets/burger-day.png",
+    image: "./assets/products/burger-cheese.png",
     popular: false,
   },
   {
@@ -96,7 +96,7 @@ const catalog = [
     badge: "Сытный",
     description: "Двойная котлета, двойной сыр и маринованные огурцы.",
     price: 229,
-    image: "./assets/burger-xl.png",
+    image: "./assets/products/burger-double-cheese.png",
     popular: true,
   },
   {
@@ -106,7 +106,7 @@ const catalog = [
     badge: "Дымный соус",
     description: "Котлета, сыр, овощи и густой BBQ-соус.",
     price: 219,
-    image: "./assets/burger-legend.png",
+    image: "./assets/products/burger-bbq.png",
     popular: false,
   },
   {
@@ -116,7 +116,7 @@ const catalog = [
     badge: "Легкий выбор",
     description: "Небольшой бургер к фри или напитку.",
     price: 139,
-    image: "./assets/burger-day.png",
+    image: "./assets/products/burger-mini.png",
     popular: false,
   },
   {
@@ -126,7 +126,7 @@ const catalog = [
     badge: "Острый выбор",
     description: "Острое мясо, свежие овощи и соус чили.",
     price: 169,
-    image: "./assets/burum-spicy.png",
+    image: "./assets/products/burum-spicy.png",
     popular: true,
   },
   {
@@ -136,7 +136,7 @@ const catalog = [
     badge: "Горячий",
     description: "Курица, салат, томаты и фирменный белый соус.",
     price: 159,
-    image: "./assets/burum-spicy.png",
+    image: "./assets/products/burum-chicken.png",
     popular: false,
   },
   {
@@ -146,7 +146,7 @@ const catalog = [
     badge: "Сыр внутри",
     description: "Мясо, овощи, сыр и мягкий соус в лаваше.",
     price: 179,
-    image: "./assets/wrap-long.png",
+    image: "./assets/products/burum-cheese.png",
     popular: false,
   },
   {
@@ -156,7 +156,7 @@ const catalog = [
     badge: "Говядина",
     description: "Говядина, овощи, соус и плотный лаваш.",
     price: 199,
-    image: "./assets/wrap-long.png",
+    image: "./assets/products/burum-beef.png",
     popular: false,
   },
   {
@@ -166,7 +166,7 @@ const catalog = [
     badge: "Перец и соус",
     description: "Курица, перец, зелень и яркий острый соус.",
     price: 189,
-    image: "./assets/burum-spicy.png",
+    image: "./assets/products/burum-mex.png",
     popular: false,
   },
   {
@@ -176,7 +176,7 @@ const catalog = [
     badge: "Выгодно",
     description: "Бургер, картофель фри и напиток на выбор.",
     price: 249,
-    image: "./assets/combo-xl.png",
+    image: "./assets/products/combo-xl.png",
     popular: true,
   },
   {
@@ -186,7 +186,7 @@ const catalog = [
     badge: "Сегодня",
     description: "Шаверма, картофель и напиток без лишних решений.",
     price: 229,
-    image: "./assets/hero-combo.png",
+    image: "./assets/products/combo-day.png",
     popular: false,
   },
   {
@@ -196,7 +196,7 @@ const catalog = [
     badge: "Полный набор",
     description: "Бургер Legend, фри, наггетсы и напиток.",
     price: 299,
-    image: "./assets/combo-xl.png",
+    image: "./assets/products/combo-legend.png",
     popular: false,
   },
   {
@@ -206,7 +206,7 @@ const catalog = [
     badge: "Шаверма + фри",
     description: "Классическая шаверма, фри и холодная кола.",
     price: 239,
-    image: "./assets/hero-combo.png",
+    image: "./assets/products/combo-shawarma.png",
     popular: false,
   },
   {
@@ -216,7 +216,7 @@ const catalog = [
     badge: "На троих",
     description: "Две шавермы, бургер, фри XL и два напитка.",
     price: 599,
-    image: "./assets/hero-combo.png",
+    image: "./assets/products/combo-family.png",
     popular: false,
   },
   {
@@ -226,7 +226,7 @@ const catalog = [
     badge: "Хрустящий",
     description: "Горячий картофель с солью.",
     price: 79,
-    image: "./assets/fries.png",
+    image: "./assets/products/fries.png",
     popular: false,
   },
   {
@@ -236,7 +236,7 @@ const catalog = [
     badge: "Сырный соус",
     description: "Фри, сырный соус и чуть зелени.",
     price: 99,
-    image: "./assets/fries.png",
+    image: "./assets/products/fries-cheese.png",
     popular: false,
   },
   {
@@ -246,7 +246,7 @@ const catalog = [
     badge: "К соусу",
     description: "Золотистые кусочки и соус на выбор.",
     price: 119,
-    image: "./assets/nuggets.png",
+    image: "./assets/products/nuggets.png",
     popular: false,
   },
   {
@@ -256,7 +256,7 @@ const catalog = [
     badge: "Большая порция",
     description: "Больше наггетсов для компании или сильного голода.",
     price: 169,
-    image: "./assets/nuggets.png",
+    image: "./assets/products/nuggets-xl.png",
     popular: false,
   },
   {
@@ -266,7 +266,7 @@ const catalog = [
     badge: "3 вкуса",
     description: "Чесночный, сырный и чили.",
     price: 39,
-    image: "./assets/nuggets.png",
+    image: "./assets/products/sauce-set.png",
     popular: false,
   },
   {
@@ -276,7 +276,7 @@ const catalog = [
     badge: "Холодная",
     description: "Классический напиток к горячему заказу.",
     price: 55,
-    image: "./assets/cola-can.png",
+    image: "./assets/products/cola.png",
     popular: false,
   },
   {
@@ -286,7 +286,7 @@ const catalog = [
     badge: "Лед и чай",
     description: "Освежающий чай со льдом.",
     price: 65,
-    image: "./assets/cold-drink.png",
+    image: "./assets/products/ice-tea.png",
     popular: false,
   },
   {
@@ -296,7 +296,7 @@ const catalog = [
     badge: "Цитрус",
     description: "Холодный лимонад к острому меню.",
     price: 69,
-    image: "./assets/cold-drink.png",
+    image: "./assets/products/lemonade.png",
     popular: false,
   },
   {
@@ -306,7 +306,7 @@ const catalog = [
     badge: "Без газа",
     description: "Простая вода к заказу.",
     price: 35,
-    image: "./assets/cold-drink.png",
+    image: "./assets/products/water.png",
     popular: false,
   },
   {
@@ -316,7 +316,7 @@ const catalog = [
     badge: "Холодный заряд",
     description: "Напиток для позднего перекуса.",
     price: 75,
-    image: "./assets/cola-can.png",
+    image: "./assets/products/energy.png",
     popular: false,
   },
 ];
@@ -394,7 +394,7 @@ function productCard(product, index) {
   return `
     <article class="product-card" data-sku-card="${product.sku}" data-reveal style="--reveal-delay: ${Math.min(index, 6) * 45}ms">
       <div class="product-card__image">
-        <img src="${product.image}" alt="${product.name}" loading="lazy" />
+        <img src="${product.image}" alt="${product.name}" loading="eager" decoding="async" />
       </div>
       <div class="product-card__body">
         <p class="product-card__tag">${product.badge}</p>
@@ -414,7 +414,7 @@ function menuItem(product, index) {
 
   return `
     <article class="menu-item" data-category="${product.category}" data-sku-card="${product.sku}" data-reveal style="--reveal-delay: ${Math.min(index, 10) * 28}ms">
-      <img src="${product.image}" alt="${product.name}" loading="lazy" />
+      <img src="${product.image}" alt="${product.name}" loading="eager" decoding="async" />
       <div>
         <span class="menu-item__category">${categoryLabels[product.category]}</span>
         <h3>${product.name}</h3>

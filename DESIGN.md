@@ -74,6 +74,8 @@
 
 - Product assets use transparent edge-cleaned PNGs
 - Promo uses a composed shawarma + fries + drink image instead of the previous shifted banner
+- Every catalog SKU has its own transparent product image so repeated cards do not share the same photo
+- Promo imagery is a product stack on the site surface, not food placed on an orange rectangle
 - Avoid: white image boxes inside white cards, generic glow, decorative stock effects
 
 ## Accessibility
@@ -91,3 +93,4 @@
 ## Changelog
 
 - 2026-07-04: Reworked mobile layout, cart drawer, product image treatment, promo image and purposeful cart motion.
+- 2026-07-05: Added unique transparent product imagery for all catalog positions and redesigned the daily promo card.
